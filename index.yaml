@@ -1,0 +1,52 @@
+apiVersion: v1
+entries:
+  airbyte:
+  - apiVersion: v2
+    appVersion: 0.43.1
+    created: "2022-07-18T16:19:11.178894+03:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: logs.minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - condition: airbyte-bootloader.enabled
+      name: airbyte-bootloader
+      repository: https://xpuska513.github.io/aribyte-oss/
+      version: 0.43.1
+    - condition: temporal.enabled
+      name: temporal
+      repository: https://xpuska513.github.io/aribyte-oss/
+      version: 0.43.1
+    - condition: webapp.enabled
+      name: webapp
+      repository: https://xpuska513.github.io/aribyte-oss/
+      version: 0.43.1
+    - condition: server.enabled
+      name: server
+      repository: https://xpuska513.github.io/aribyte-oss/
+      version: 0.43.1
+    - condition: worker.enabled
+      name: worker
+      repository: https://xpuska513.github.io/aribyte-oss/
+      version: 0.43.1
+    - condition: pod-sweeper.enabled
+      name: pod-sweeper
+      repository: https://xpuska513.github.io/aribyte-oss/
+      version: 0.43.1
+    description: Helm chart to deploy airbyte
+    digest: bdafab64a2aabea7a47aac155d758c02de39906166ab9e8bf20259122b0018f6
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.43.1.tgz
+    version: 0.43.1
+generated: "2022-07-18T16:19:11.16304+03:00"
