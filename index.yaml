@@ -1,9 +1,54 @@
 apiVersion: v1
 entries:
-  airbyte-bootloader:
+  airbyte:
   - apiVersion: v2
     appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.536796+03:00"
+    created: "2022-09-15T15:41:32.120406+03:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: airbyte-bootloader.enabled
+      name: airbyte-bootloader
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    - condition: temporal.enabled
+      name: temporal
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    - condition: webapp.enabled
+      name: webapp
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    - condition: server.enabled
+      name: server
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    - condition: worker.enabled
+      name: worker
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    - condition: pod-sweeper.enabled
+      name: pod-sweeper
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    - condition: metrics.enabled
+      name: metrics
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.40.6
+    description: Helm chart to deploy airbyte
+    digest: e8078f87e4f81c9c78e46f69e9eca5fda72e1eaa99897760d830218278aaafd9
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.40.6.tgz
+    version: 0.40.6
+  airbyte-bootloader:
+  - apiVersion: v2
+    appVersion: 0.40.5
+    created: "2022-09-15T15:41:32.12173+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -11,7 +56,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-bootloader
-    digest: c39056288a48953efd439a89da051f24f2a3a9cf495e6ee6fe378d599b5963b5
+    digest: def99058f354ac767ecb8ee1a5c7cc87d4b1d618593f3ed7d65f4757d83426b1
     name: airbyte-bootloader
     type: application
     urls:
@@ -19,8 +64,8 @@ entries:
     version: 0.40.6
   metrics:
   - apiVersion: v2
-    appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.537868+03:00"
+    appVersion: 0.40.3
+    created: "2022-09-15T15:41:32.122601+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -28,7 +73,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-metrics
-    digest: 439225ccf0a6dc792018c075575f773dce08c904e9abd1765950b9bd39686a2b
+    digest: 10adafeba787fcc3a82c9adc3038146b27f58f9d86280a45767dce6937396a95
     name: metrics
     type: application
     urls:
@@ -36,8 +81,8 @@ entries:
     version: 0.40.6
   pod-sweeper:
   - apiVersion: v2
-    appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.539109+03:00"
+    appVersion: 0.39.37-alpha
+    created: "2022-09-15T15:41:32.123908+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +90,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-pod-sweeper
-    digest: 21844ed47d599f7caa115f54175f533932646280154bc77a2ea2cbb06c8b5765
+    digest: 5c63e260566aa41e894ed9dd3d60e76674e8240d1bc6f0093b65d6e40179c984
     name: pod-sweeper
     type: application
     urls:
@@ -53,8 +98,8 @@ entries:
     version: 0.40.6
   server:
   - apiVersion: v2
-    appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.540588+03:00"
+    appVersion: 0.40.5
+    created: "2022-09-15T15:41:32.125016+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -62,7 +107,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-server
-    digest: 760522ca449d8968a26157c0696be6b98fd0d417a233b583a834e944a950eb87
+    digest: 38aa563079c740ad51f02486108a0a1724b8d408a480161c901c0f57e7378005
     name: server
     type: application
     urls:
@@ -70,8 +115,8 @@ entries:
     version: 0.40.6
   temporal:
   - apiVersion: v2
-    appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.541961+03:00"
+    appVersion: 0.40.5
+    created: "2022-09-15T15:41:32.126232+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -79,7 +124,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-temporal
-    digest: a63b56c9c74f8988590f5df6a63d3696ce4ade596579db9598452fdc46900c8c
+    digest: c05b2212dae3fc5e8419ae45534326d1717d7eb5ae638265f293b3434ecc44dc
     name: temporal
     type: application
     urls:
@@ -87,8 +132,8 @@ entries:
     version: 0.40.6
   webapp:
   - apiVersion: v2
-    appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.543258+03:00"
+    appVersion: 0.40.5
+    created: "2022-09-15T15:41:32.127245+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -96,7 +141,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-webapp
-    digest: 138da4843f8562b0fb4f6e215c9c5c625b4b83356093121cbe13330343ed65cd
+    digest: 25d7654b92cb54c0fa5c0f526c4144057b2b66c4955d80d2aee02a70b5cbad4e
     name: webapp
     type: application
     urls:
@@ -104,8 +149,8 @@ entries:
     version: 0.40.6
   worker:
   - apiVersion: v2
-    appVersion: 0.40.6
-    created: "2022-09-15T13:29:10.544502+03:00"
+    appVersion: 0.40.5
+    created: "2022-09-15T15:41:32.128381+03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -113,10 +158,10 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: Helm chart to deploy airbyte-worker
-    digest: 93cd0729e2e91b49e5e4a393c91c7a251e80e6460c2780c1755f9ec8eaf2852d
+    digest: cccebc182ca25c5be8796690ca0258f2fefd6a5f3738596ddd26e00d1b9cfc3c
     name: worker
     type: application
     urls:
     - worker-0.40.6.tgz
     version: 0.40.6
-generated: "2022-09-15T13:29:10.53396+03:00"
+generated: "2022-09-15T15:41:32.107886+03:00"
