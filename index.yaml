@@ -3,7 +3,59 @@ entries:
   airbyte:
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.166100329Z"
+    created: "2022-09-20T14:04:01.403304886Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: global.logs.minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - condition: airbyte-bootloader.enabled
+      name: airbyte-bootloader
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    - condition: temporal.enabled
+      name: temporal
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    - condition: webapp.enabled
+      name: webapp
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    - condition: server.enabled
+      name: server
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    - condition: worker.enabled
+      name: worker
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    - condition: pod-sweeper.enabled
+      name: pod-sweeper
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    - condition: metrics.enabled
+      name: metrics
+      repository: https://airbytehq.github.io/helm-charts/
+      version: 0.41.1
+    description: Helm chart to deploy airbyte
+    digest: d1543adfbd998087dc1bdcf1941d0023c335bcfef5ae8157d46bd74b0b85a602
+    name: airbyte
+    type: application
+    urls:
+    - airbyte-0.41.1.tgz
+    version: 0.41.1
+  - apiVersion: v2
+    appVersion: 0.40.7
+    created: "2022-09-20T14:04:01.379372185Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -55,7 +107,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.6
-    created: "2022-09-20T13:58:44.134329778Z"
+    created: "2022-09-20T14:04:01.354327533Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -100,7 +152,7 @@ entries:
   airbyte-bootloader:
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.17200238Z"
+    created: "2022-09-20T14:04:01.411107345Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -116,7 +168,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.170541618Z"
+    created: "2022-09-20T14:04:01.409098353Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -132,7 +184,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.169074155Z"
+    created: "2022-09-20T14:04:01.406165618Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -148,7 +200,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.40.5
-    created: "2022-09-20T13:58:44.167588492Z"
+    created: "2022-09-20T14:04:01.404818356Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -165,7 +217,7 @@ entries:
   metrics:
   - apiVersion: v2
     appVersion: 0.40.3
-    created: "2022-09-20T13:58:44.180118325Z"
+    created: "2022-09-20T14:04:01.417058919Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -181,7 +233,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.40.3
-    created: "2022-09-20T13:58:44.178434653Z"
+    created: "2022-09-20T14:04:01.415606252Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -197,7 +249,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.3
-    created: "2022-09-20T13:58:44.175351122Z"
+    created: "2022-09-20T14:04:01.414185187Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -213,7 +265,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.40.3
-    created: "2022-09-20T13:58:44.173958063Z"
+    created: "2022-09-20T14:04:01.412654416Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -230,7 +282,7 @@ entries:
   pod-sweeper:
   - apiVersion: v2
     appVersion: 0.39.37-alpha
-    created: "2022-09-20T13:58:44.189546125Z"
+    created: "2022-09-20T14:04:01.424210148Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -246,7 +298,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.39.37-alpha
-    created: "2022-09-20T13:58:44.187200826Z"
+    created: "2022-09-20T14:04:01.421955744Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -262,7 +314,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.39.37-alpha
-    created: "2022-09-20T13:58:44.185208541Z"
+    created: "2022-09-20T14:04:01.420294368Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -278,7 +330,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.39.37-alpha
-    created: "2022-09-20T13:58:44.18329286Z"
+    created: "2022-09-20T14:04:01.418701994Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -295,7 +347,7 @@ entries:
   server:
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.199861464Z"
+    created: "2022-09-20T14:04:01.431471182Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -311,7 +363,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.197809377Z"
+    created: "2022-09-20T14:04:01.429944511Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -327,7 +379,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.194178722Z"
+    created: "2022-09-20T14:04:01.428341638Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -343,7 +395,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.40.5
-    created: "2022-09-20T13:58:44.191422105Z"
+    created: "2022-09-20T14:04:01.426519954Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -360,7 +412,7 @@ entries:
   temporal:
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.206296737Z"
+    created: "2022-09-20T14:04:01.437589963Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -376,7 +428,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.204589565Z"
+    created: "2022-09-20T14:04:01.436177598Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -392,7 +444,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.203034199Z"
+    created: "2022-09-20T14:04:01.434826936Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -408,7 +460,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.40.5
-    created: "2022-09-20T13:58:44.201466132Z"
+    created: "2022-09-20T14:04:01.43296545Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -425,7 +477,7 @@ entries:
   webapp:
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.215687337Z"
+    created: "2022-09-20T14:04:01.445094108Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -441,7 +493,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.213631249Z"
+    created: "2022-09-20T14:04:01.443404331Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -457,7 +509,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.211015438Z"
+    created: "2022-09-20T14:04:01.441956564Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -473,7 +525,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.40.5
-    created: "2022-09-20T13:58:44.207960608Z"
+    created: "2022-09-20T14:04:01.439645758Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -490,7 +542,7 @@ entries:
   worker:
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.223641675Z"
+    created: "2022-09-20T14:04:01.451829618Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -506,7 +558,7 @@ entries:
     version: 0.41.1
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.221736494Z"
+    created: "2022-09-20T14:04:01.450204643Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -522,7 +574,7 @@ entries:
     version: 0.41.0
   - apiVersion: v2
     appVersion: 0.40.7
-    created: "2022-09-20T13:58:44.219727308Z"
+    created: "2022-09-20T14:04:01.448514466Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -538,7 +590,7 @@ entries:
     version: 0.40.8
   - apiVersion: v2
     appVersion: 0.40.5
-    created: "2022-09-20T13:58:44.217759125Z"
+    created: "2022-09-20T14:04:01.446795386Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -552,4 +604,4 @@ entries:
     urls:
     - worker-0.40.6.tgz
     version: 0.40.6
-generated: "2022-09-20T13:58:44.114726245Z"
+generated: "2022-09-20T14:04:01.338114488Z"
