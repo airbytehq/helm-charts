@@ -24,3 +24,7 @@ To uninstall the chart:
 ```
     helm delete airbyte
 ```
+
+## Issues
+
+Please open any Helm issues on the [main Airbyte repo](https://github.com/airbytehq/airbyte).
