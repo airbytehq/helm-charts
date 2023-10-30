@@ -5,24 +5,23 @@ Helm's [documentation](https://helm.sh/docs) to get started.
 
 Once Helm has been set up correctly, add the repo as follows:
 
-```
-
-  helm repo add airbyte-oss https://airbytehq.github.io/helm-charts
+```sh
+helm repo add airbyte https://airbytehq.github.io/helm-charts
 ```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo airbyte-os` to see the charts.
+the latest versions of the packages.  You can then run `helm search repo airbyte` to see the charts.
 
-To install the airbyte(as a whole) chart:
+To install the airbyte (as a whole) chart:
 
-```
-    helm install airbyte airbyte-oss/airbyte
+```sh
+helm install airbyte airbyte/airbyte
 ```
 
 To uninstall the chart:
 
-```
-    helm delete airbyte
+```sh
+helm delete airbyte
 ```
 
 ## Issues
