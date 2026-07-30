@@ -1,29 +1,37 @@
-## Usage
+# Deprecated: Airbyte Helm chart V1
 
-[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
-Helm's [documentation](https://helm.sh/docs) to get started.
+This repository hosts **chart V1**, which is deprecated and no longer receives releases.
+The last version published here is `airbyte 1.9.2`.
 
-Once Helm has been set up correctly, add the repo as follows:
-
-```sh
-helm repo add airbyte https://airbytehq.github.io/helm-charts
-```
-
-If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo airbyte` to see the charts.
-
-To install the airbyte (as a whole) chart:
+Airbyte's Helm charts are now published from
+[airbytehq/charts](https://github.com/airbytehq/charts):
 
 ```sh
-helm install airbyte airbyte/airbyte
+helm repo add airbyte-v2 https://airbytehq.github.io/charts
+helm repo update
+helm search repo airbyte-v2
 ```
 
-To uninstall the chart:
+[Upgrade to Helm chart V2](https://docs.airbyte.com/platform/deploying-airbyte/chart-v2-community)
+covers both a fresh install and migrating an existing V1 release, including the
+`values.yaml` changes V2 requires.
+
+Chart V2 is available on Artifact Hub as
+[airbyte-v2/airbyte](https://artifacthub.io/packages/helm/airbyte-v2/airbyte).
+
+## Existing installations keep working
+
+This repository's chart index stays published — no end-of-life date is set.
+Existing `helm repo add` remotes, pinned `--version` installs, and Argo CD
+applications that point at `https://airbytehq.github.io/helm-charts` continue to
+resolve:
 
 ```sh
-helm delete airbyte
+helm install airbyte airbyte/airbyte --version 1.9.2
 ```
+
+V1 receives no fixes, including for security issues, so plan a migration to V2.
 
 ## Issues
 
-Please open any Helm issues on the [main Airbyte repo](https://github.com/airbytehq/airbyte).
+Please open Helm issues on the [main Airbyte repo](https://github.com/airbytehq/airbyte).
